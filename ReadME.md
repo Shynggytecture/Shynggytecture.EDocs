@@ -1,0 +1,4 @@
+# Shynggytecture
+
+## EDocs test app
+
