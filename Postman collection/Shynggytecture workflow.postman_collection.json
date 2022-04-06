@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "482df432-0b30-48de-8ec0-3c3076e92ad3",
+		"name": "Shynggytecture workflow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Document | Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"doc_1\",\r\n  \"employeeOwnerId\": 1,\r\n  \"companyId\": 1,\r\n  \"publicInformation\": \"pibInfo\",\r\n  \"content\": \"some content\",\r\n  \"privateInformation\": \"private1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44355/api/Documents",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44355",
+					"path": [
+						"api",
+						"Documents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Route 1 | Create route",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documentId\": 1,\r\n  \"ownerEmployeeId\": 1,\r\n  \"senderCompanyId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44355/api/Routes/Create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44355",
+					"path": [
+						"api",
+						"Routes",
+						"Create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Route 2 | Company Add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documentId\": 1,\r\n  \"companyId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44355/api/Routes/Company",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44355",
+					"path": [
+						"api",
+						"Routes",
+						"Company"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Route 3 | Employee Add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documentId\": 1,\r\n  \"employeeId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44355/api/Routes/Company/Employee",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44355",
+					"path": [
+						"api",
+						"Routes",
+						"Company",
+						"Employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Route 4 | Route Start",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documentId\": 1,\r\n  \"employeeId\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44355/api/Routes/Start",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44355",
+					"path": [
+						"api",
+						"Routes",
+						"Start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Route 5 | Route Accept",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documentId\": 1,\r\n  \"employeeId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44355/api/Routes/Accept",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44355",
+					"path": [
+						"api",
+						"Routes",
+						"Accept"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Route 6 | Employee Receiver Add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documentId\": 1,\r\n  \"employeeId\": 6,\r\n  \"companyId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44355/api/Routes/Company/Employee",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44355",
+					"path": [
+						"api",
+						"Routes",
+						"Company",
+						"Employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Route 7 | Receiver Route Start",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documentId\": 1,\r\n  \"companyId\": 2,\r\n  \"employeeId\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44355/api/Routes/Start",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44355",
+					"path": [
+						"api",
+						"Routes",
+						"Start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Route 8 | Receiver Route Accept",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documentId\": 1,\r\n  \"employeeId\": 6,\r\n  \"companyId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44355/api/Routes/Accept",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44355",
+					"path": [
+						"api",
+						"Routes",
+						"Accept"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
